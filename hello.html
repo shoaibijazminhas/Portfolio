@@ -1,0 +1,1000 @@
+<!DOCTYPE html>
+<html lang="ur">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Ch Farm City - Shoaib Ijaz Minhas</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"/>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+    
+    <style>
+        /* ========== RESET ========== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.7;
+            color: #1e293b;
+            background: #f8faf6;
+        }
+
+        .container {
+            max-width: 1140px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* ========== BUTTONS ========== */
+        .btn {
+            display: inline-block;
+            padding: 12px 32px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background: #2d6a3e;
+            color: #fff;
+        }
+        .btn-primary:hover {
+            background: #1f4f2d;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(45, 106, 62, 0.25);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: #2d6a3e;
+            border: 2px solid #2d6a3e;
+        }
+        .btn-outline:hover {
+            background: #2d6a3e;
+            color: #fff;
+            transform: translateY(-2px);
+        }
+
+        .btn-whatsapp {
+            background: #25d366;
+            color: #fff;
+        }
+        .btn-whatsapp:hover {
+            background: #1da851;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(37, 211, 102, 0.3);
+        }
+
+        .section-title {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: #1e293b;
+            text-align: center;
+            margin-bottom: 8px;
+        }
+        .section-title span {
+            color: #2d6a3e;
+        }
+        .section-subtitle {
+            text-align: center;
+            color: #64748b;
+            margin-bottom: 48px;
+            font-size: 1.05rem;
+        }
+
+        /* ========== HEADER ========== */
+        header {
+            background: #ffffff;
+            padding: 14px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-text h1 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #1e293b;
+            line-height: 1.2;
+        }
+        .logo-text span {
+            font-size: 0.75rem;
+            color: #64748b;
+            font-weight: 400;
+            display: block;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 28px;
+            align-items: center;
+        }
+        .nav-links a {
+            color: #475569;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: 0.3s;
+        }
+        .nav-links a:hover {
+            color: #2d6a3e;
+        }
+        .nav-links .nav-btn {
+            background: #2d6a3e;
+            color: #fff;
+            padding: 8px 22px;
+            border-radius: 8px;
+            font-weight: 600;
+        }
+        .nav-links .nav-btn:hover {
+            background: #1f4f2d;
+            color: #fff;
+        }
+
+        .hamburger {
+            display: none;
+            font-size: 1.6rem;
+            color: #1e293b;
+            cursor: pointer;
+        }
+
+        /* ========== HERO ========== */
+        .hero {
+            padding: 140px 0 0;
+            background: linear-gradient(135deg, #f0f5ee 0%, #e4eee2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            padding-bottom: 40px;
+        }
+
+        .hero-text .badge {
+            display: inline-block;
+            background: rgba(45, 106, 62, 0.12);
+            padding: 4px 18px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            color: #2d6a3e;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+
+        .hero-text h1 {
+            font-size: 3.2rem;
+            font-weight: 700;
+            line-height: 1.15;
+            color: #1e293b;
+            margin: 16px 0 12px;
+        }
+        .hero-text h1 span {
+            color: #2d6a3e;
+        }
+
+        .hero-text .subtitle {
+            font-size: 1.15rem;
+            color: #475569;
+            margin-bottom: 8px;
+        }
+        .hero-text .owner {
+            color: #64748b;
+            font-size: 1rem;
+            margin-bottom: 24px;
+        }
+        .hero-text .owner strong {
+            color: #1e293b;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-bottom: 28px;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 16px;
+        }
+        .social-icons a {
+            color: #64748b;
+            font-size: 1.4rem;
+            transition: 0.3s;
+        }
+        .social-icons a:hover {
+            color: #2d6a3e;
+            transform: translateY(-2px);
+        }
+
+        .hero-image img {
+            width: 100%;
+            max-width: 480px;
+            border-radius: 16px;
+            box-shadow: 0 20px 48px rgba(0,0,0,0.08);
+            display: block;
+            margin: 0 auto;
+            transition: 0.4s;
+            height: 400px;
+            object-fit: cover;
+        }
+        .hero-image img:hover {
+            transform: scale(1.01);
+            box-shadow: 0 24px 56px rgba(0,0,0,0.12);
+        }
+
+        /* ========== PROFILE SECTION (Below Hero) ========== */
+        .profile-section {
+            padding: 30px 0 60px;
+            background: linear-gradient(135deg, #f0f5ee 0%, #e4eee2 100%);
+        }
+
+        .profile-card {
+            background: #ffffff;
+            border-radius: 20px;
+            padding: 30px 40px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.06);
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            max-width: 700px;
+            margin: 0 auto;
+            border: 1px solid #e8ede6;
+            transition: 0.3s;
+        }
+        .profile-card:hover {
+            box-shadow: 0 12px 40px rgba(0,0,0,0.1);
+            transform: translateY(-3px);
+        }
+
+        .profile-card .profile-img {
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #2d6a3e;
+            flex-shrink: 0;
+        }
+
+        .profile-card .profile-info h3 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #1e293b;
+            margin-bottom: 2px;
+        }
+        .profile-card .profile-info .role {
+            color: #2d6a3e;
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+        .profile-card .profile-info .location {
+            color: #64748b;
+            font-size: 0.9rem;
+        }
+        .profile-card .profile-info .location i {
+            color: #2d6a3e;
+            margin-right: 4px;
+        }
+
+        .profile-card .profile-badge {
+            margin-left: auto;
+            background: #2d6a3e;
+            color: #fff;
+            padding: 6px 18px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            white-space: nowrap;
+        }
+
+        /* ========== STATS BAR ========== */
+        .stats-bar {
+            background: #ffffff;
+            padding: 40px 0;
+            border-bottom: 1px solid #e8ede6;
+        }
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            text-align: center;
+        }
+        .stats-grid .stat h3 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #2d6a3e;
+        }
+        .stats-grid .stat p {
+            color: #64748b;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        /* ========== ABOUT ========== */
+        .about {
+            padding: 80px 0;
+            background: #ffffff;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about-text h3 {
+            font-size: 1.6rem;
+            color: #1e293b;
+            margin-bottom: 16px;
+        }
+        .about-text p {
+            color: #475569;
+            margin-bottom: 16px;
+            font-size: 1rem;
+        }
+
+        .about-image img {
+            width: 100%;
+            border-radius: 16px;
+            box-shadow: 0 12px 32px rgba(0,0,0,0.06);
+            height: 320px;
+            object-fit: cover;
+        }
+
+        /* ========== PRODUCTS ========== */
+        .products {
+            padding: 80px 0;
+            background: #f8faf6;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+        }
+
+        .product-card {
+            background: #ffffff;
+            padding: 28px 16px;
+            text-align: center;
+            border-radius: 12px;
+            border: 1px solid #e8ede6;
+            transition: 0.3s;
+        }
+        .product-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 32px rgba(0,0,0,0.06);
+            border-color: #b8d0b0;
+        }
+        .product-card i {
+            font-size: 2.8rem;
+            color: #2d6a3e;
+            margin-bottom: 8px;
+        }
+        .product-card h4 {
+            font-size: 1rem;
+            color: #1e293b;
+        }
+        .product-card p {
+            font-size: 0.85rem;
+            color: #94a3b8;
+        }
+
+        /* ========== GALLERY ========== */
+        .gallery {
+            padding: 80px 0;
+            background: #ffffff;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .gallery-item {
+            border-radius: 12px;
+            overflow: hidden;
+            transition: 0.3s;
+        }
+        .gallery-item:hover {
+            transform: scale(1.02);
+            box-shadow: 0 12px 32px rgba(0,0,0,0.08);
+        }
+        .gallery-item img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* ========== CONTACT ========== */
+        .contact {
+            padding: 80px 0;
+            background: #f8faf6;
+        }
+
+        .contact-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+        }
+
+        .contact-info h3 {
+            font-size: 1.5rem;
+            color: #1e293b;
+            margin-bottom: 20px;
+        }
+        .contact-info p {
+            color: #475569;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .contact-info i {
+            color: #2d6a3e;
+            width: 24px;
+            font-size: 1.1rem;
+        }
+        .contact-info a {
+            color: #475569;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+        .contact-info a:hover {
+            color: #2d6a3e;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 14px 18px;
+            margin-bottom: 14px;
+            border: 1px solid #dce4d8;
+            border-radius: 10px;
+            font-size: 1rem;
+            font-family: inherit;
+            transition: 0.3s;
+            background: #ffffff;
+        }
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            outline: none;
+            border-color: #2d6a3e;
+            box-shadow: 0 0 0 3px rgba(45, 106, 62, 0.08);
+        }
+        .contact-form textarea {
+            height: 120px;
+            resize: vertical;
+        }
+        .contact-form .btn {
+            width: 100%;
+        }
+
+        /* ========== MAP ========== */
+        .map-section {
+            padding: 0 0 60px;
+            background: #f8faf6;
+        }
+        .map-section iframe {
+            width: 100%;
+            height: 320px;
+            border-radius: 16px;
+            border: 0;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.04);
+        }
+
+        /* ========== FOOTER ========== */
+        footer {
+            background: #1e293b;
+            color: #94a3b8;
+            padding: 40px 0;
+            text-align: center;
+        }
+        footer .footer-brand {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #ffffff;
+        }
+        footer .footer-brand span {
+            color: #8bb87a;
+        }
+        footer p {
+            margin: 6px 0;
+            font-size: 0.9rem;
+        }
+        footer .heart {
+            color: #ef4444;
+        }
+
+        /* ========== RESPONSIVE ========== */
+        @media (max-width: 992px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            .hero-text h1 {
+                font-size: 2.6rem;
+            }
+            .hero-buttons {
+                justify-content: center;
+            }
+            .social-icons {
+                justify-content: center;
+            }
+            .about-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            .contact-wrapper {
+                grid-template-columns: 1fr;
+            }
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .hero-image img {
+                height: 300px;
+            }
+            .profile-card {
+                flex-direction: column;
+                text-align: center;
+                padding: 25px 20px;
+            }
+            .profile-card .profile-badge {
+                margin-left: 0;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                background: #ffffff;
+                position: absolute;
+                top: 68px;
+                left: 0;
+                width: 100%;
+                padding: 24px 0;
+                gap: 16px;
+                box-shadow: 0 12px 32px rgba(0,0,0,0.06);
+                border-top: 1px solid #e8ede6;
+            }
+            .nav-links.active {
+                display: flex;
+            }
+            .hamburger {
+                display: block;
+            }
+            .hero-text h1 {
+                font-size: 2.2rem;
+            }
+            .hero {
+                padding: 120px 0 0;
+            }
+            .section-title {
+                font-size: 1.8rem;
+            }
+            .product-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+            .stats-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 12px;
+            }
+            .stats-grid .stat h3 {
+                font-size: 1.6rem;
+            }
+            .hero-image img {
+                height: 250px;
+            }
+            .about-image img {
+                height: 240px;
+            }
+            .profile-card {
+                padding: 20px 16px;
+            }
+            .profile-card .profile-img {
+                width: 70px;
+                height: 70px;
+            }
+            .profile-card .profile-info h3 {
+                font-size: 1.1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-text h1 {
+                font-size: 1.8rem;
+            }
+            .product-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 12px;
+            }
+            .btn {
+                padding: 10px 22px;
+                font-size: 0.85rem;
+            }
+            .container {
+                padding: 0 16px;
+            }
+            .hero-image img {
+                height: 200px;
+            }
+            .gallery-item img {
+                height: 180px;
+            }
+            .profile-card .profile-img {
+                width: 60px;
+                height: 60px;
+            }
+            .profile-card .profile-info h3 {
+                font-size: 1rem;
+            }
+            .profile-card .profile-info .role {
+                font-size: 0.85rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ===== HEADER ===== -->
+    <header>
+        <div class="container nav-container">
+            <div class="logo">
+                <div class="logo-text">
+                    <h1>🌱 Ch Farm City</h1>
+                    <span>Shoaib Ijaz Minhas</span>
+                </div>
+            </div>
+            <nav>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#products">Products</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#contact" class="nav-btn">Get in Touch</a></li>
+                </ul>
+                <div class="hamburger" id="hamburger">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ===== HERO ===== -->
+    <section id="home" class="hero">
+        <div class="container hero-content">
+            <div class="hero-text">
+                <span class="badge"><i class="fas fa-leaf"></i> Fresh from Farm</span>
+                <h1>Welcome to <span>Ch Farm City</span></h1>
+                <p class="subtitle">🌾 50+ Bigha · Fresh Vegetables · Daily Mandi Supply</p>
+                <p class="owner">👨‍🌾 Owner: <strong>Shoaib Ijaz Minhas</strong></p>
+                <div class="hero-buttons">
+                    <a href="#products" class="btn btn-primary">Our Products</a>
+                    <a href="#contact" class="btn btn-outline">Contact Us</a>
+                </div>
+                <div class="social-icons">
+                    <a href="https://wa.me/923001234567" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=600&h=400&fit=crop&crop=center" alt="Ch Farm City - Beautiful Farm" />
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== PROFILE SECTION (Below Hero) ===== -->
+    <section class="profile-section">
+        <div class="container">
+            <div class="profile-card">
+                <img 
+                    src="index.png" 
+                    alt="Shoaib Ijaz Minhas" 
+                    class="profile-img"
+                />
+                <div class="profile-info">
+                    <h3>Shoaib Ijaz Minhas</h3>
+                    <div class="role">🌾 Farm Owner & Agriculture Expert</div>
+                    <div class="location"><i class="fas fa-map-marker-alt"></i> Village Rabal, Chakwal, Pakistan</div>
+                </div>
+                <span class="profile-badge"><i class="fas fa-crown"></i> Premium Farmer</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== STATS BAR ===== -->
+    <section class="stats-bar">
+        <div class="container stats-grid">
+            <div class="stat">
+                <h3>50+</h3>
+                <p>Bigha Land</p>
+            </div>
+            <div class="stat">
+                <h3>Daily</h3>
+                <p>Mandi Supply</p>
+            </div>
+            <div class="stat">
+                <h3>100%</h3>
+                <p>Fresh & Organic</p>
+            </div>
+            <div class="stat">
+                <h3>8+</h3>
+                <p>Vegetable Varieties</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== ABOUT ===== -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">About <span>Ch Farm City</span></h2>
+            <p class="section-subtitle">Know more about our farming journey</p>
+            <div class="about-grid">
+                <div class="about-text">
+                    <h3>Passionate Farming Since 2020</h3>
+                    <p>
+                        <strong>Shoaib Ijaz Minhas</strong> is a dedicated farmer based in 
+                        <strong>Village Rabal, Chakwal</strong>. With over <strong>50 Bigha</strong> 
+                        of agricultural land, we grow a wide variety of fresh, organic vegetables 
+                        and supply them daily to the local <strong>Mandi</strong>.
+                    </p>
+                    <p>
+                        Our commitment is to provide high-quality, pesticide-free vegetables 
+                        to our community while promoting sustainable farming practices.
+                    </p>
+                    <a href="#contact" class="btn btn-primary" style="margin-top:8px;">Get in Touch</a>
+                </div>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=600&h=400&fit=crop&crop=center" alt="Farm View" />
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== PRODUCTS ===== -->
+    <section id="products" class="products">
+        <div class="container">
+            <h2 class="section-title">Our <span>Vegetables</span></h2>
+            <p class="section-subtitle">Fresh from our farm to your table</p>
+            <div class="product-grid">
+                <div class="product-card">
+                    <i class="fas fa-carrot"></i>
+                    <h4>Gajar</h4>
+                    <p>Carrot</p>
+                </div>
+                <div class="product-card">
+                    <i class="fas fa-apple-alt"></i>
+                    <h4>Tamatar</h4>
+                    <p>Tomato</p>
+                </div>
+                <div class="product-card">
+                    <i class="fas fa-pepper-hot"></i>
+                    <h4>Shimla Mirch</h4>
+                    <p>Bell Pepper</p>
+                </div>
+                <div class="product-card">
+                    <i class="fas fa-seedling"></i>
+                    <h4>Palak</h4>
+                    <p>Spinach</p>
+                </div>
+                <div class="product-card">
+                    <i class="fas fa-eggplant"></i>
+                    <h4>Baingan</h4>
+                    <p>Eggplant</p>
+                </div>
+                <div class="product-card">
+                    <i class="fas fa-cucumber"></i>
+                    <h4>Kheera</h4>
+                    <p>Cucumber</p>
+                </div>
+                <div class="product-card">
+                    <i class="fas fa-pepper"></i>
+                    <h4>Hari Mirch</h4>
+                    <p>Green Chili</p>
+                </div>
+                <div class="product-card">
+                    <i class="fas fa-seedling"></i>
+                    <h4>Methi</h4>
+                    <p>Fenugreek</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== GALLERY ===== -->
+    <section id="gallery" class="gallery">
+        <div class="container">
+            <h2 class="section-title">Farm <span>Gallery</span></h2>
+            <p class="section-subtitle">Glimpses of our farm life</p>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1500937386664-56d1dfef3854?w=400&h=250&fit=crop&crop=center" alt="Farm View" />
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?w=400&h=250&fit=crop&crop=center" alt="Harvest" />
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1597362925123-77861d3fbac7?w=400&h=250&fit=crop&crop=center" alt="Vegetables" />
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1523348837708-15d4a09cfac2?w=400&h=250&fit=crop&crop=center" alt="Farm Life" />
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1574943320219-553eb213f72d?w=400&h=250&fit=crop&crop=center" alt="Irrigation" />
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1592982537447-7440770cbfc9?w=400&h=250&fit=crop&crop=center" alt="Organic Farming" />
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CONTACT ===== -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Get in <span>Touch</span></h2>
+            <p class="section-subtitle">We'd love to hear from you</p>
+            <div class="contact-wrapper">
+                <div class="contact-info">
+                    <h3><i class="fas fa-map-marker-alt" style="color:#2d6a3e;"></i> Visit Us</h3>
+                    <p><i class="fas fa-user"></i> Shoaib Ijaz Minhas</p>
+                    <p><i class="fas fa-location-dot"></i> Village Rabal, Chakwal, Pakistan</p>
+                    <p><i class="fas fa-road"></i> Dheedwal-Rabal Rd, Dheedwal, 48800</p>
+                    <p><i class="fas fa-phone"></i> <a href="tel:+923001234567">+92 3255357679</a></p>
+                    <p><i class="fab fa-whatsapp"></i> <a href="https://wa.me/923001234567" target="_blank">Chat on WhatsApp</a></p>
+                    <p><i class="fas fa-envelope"></i> annasmuhammad4@gmail.cim</p>
+                    
+                    <div style="margin-top:24px;">
+                        <a href="https://wa.me/923001234567" target="_blank" class="btn btn-whatsapp" style="display:inline-flex;align-items:center;gap:8px;">
+                            <i class="fab fa-whatsapp"></i> WhatsApp Now
+                        </a>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <input type="text" placeholder="Your Name" required />
+                        <input type="email" placeholder="Your Email" required />
+                        <input type="tel" placeholder="Phone Number" />
+                        <textarea placeholder="Your Message..."></textarea>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== MAP ===== -->
+    <section class="map-section">
+        <div class="container">
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2700.123456789!2d72.5!3d33.0!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzPCsDAwJzAwLjAiTiA3MsKwMzAnMDAuMCJF!5e0!3m2!1sen!2s!4v1234567890" 
+                allowfullscreen="" 
+                loading="lazy">
+            </iframe>
+            <p style="text-align:center;margin-top:12px;font-size:0.9rem;color:#64748b;">
+                📍 Dheedwal-Rabal Rd, Dheedwal, 48800, Pakistan
+            </p>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+        <div class="container">
+            <div class="footer-brand">🌱 Ch Farm City <span>| Shoaib Ijaz Minhas</span></div>
+            <p>Fresh from Village Rabal, Chakwal to your table</p>
+            <p style="font-size:0.85rem;color:#64748b;">
+                <h1> The Nova Stack </h1>
+                made by <span class="heart">❤</span> Haroon minhas
+            </p>
+          <p>03483399627</p>
+          <a href = "https://dmm-ht.github.io/Portfolio-/" target = "_blank" >develeper website</a>
+        </div>
+    </footer>
+
+    <!-- ===== JAVASCRIPT ===== -->
+    <script>
+        // Hamburger Menu
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('navLinks');
+
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
+
+        // Contact Form
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('✅ Thank you! Your message has been sent. Shoaib Ijaz Minhas will get back to you soon.');
+            this.reset();
+        });
+
+        // Smooth Scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Active Nav Link
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('section[id]');
+            const navLinks = document.querySelectorAll('.nav-links a:not(.nav-btn)');
+            
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 120;
+                if (pageYOffset >= sectionTop) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.style.color = '#475569';
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.style.color = '#2d6a3e';
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
